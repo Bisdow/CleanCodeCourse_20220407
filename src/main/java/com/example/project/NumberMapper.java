@@ -20,14 +20,7 @@ public class NumberMapper {
 		System.out.println(mapper.mapTo(Integer.parseInt(args[0]), args[1]));
 	}
 
-	/*
-	 * The current number that should be mapped
-	 */
-	int number;
-	/*
-	 * The result for the mapped number
-	 */
-	String result;
+
 
 	public String mapTo(int input, String toType) {
 		if (isTypeUnknown(toType)) {
@@ -58,8 +51,8 @@ public class NumberMapper {
 	// maps an integer into a String in the Romaniam number format
 	String mapToRomanianNumber(int input) {
 		// TODO: Consistency check
-		number = input;
-		result = "";
+		int number = input;
+		String result = "";
 
 		// Handle Zero Value
 		if (input == 0) {
@@ -131,8 +124,8 @@ public class NumberMapper {
 
 	// maps an integer into a String in any number format with the base provided
 	String mapToBase(int input, int base) {
-		number = input;
-		result = "";
+		int number = input;
+		String result = "";
 
 		int counter = 0;
 		int rest = input;
@@ -164,8 +157,8 @@ public class NumberMapper {
 			return "0";
 		}
 
-		number = input;
-		result = "";
+		int number = input;
+		String result = "";
 
 		int counter = 0;
 		int rest = input;

@@ -35,3 +35,4 @@
 * YAGNI => "You aint gonna need it" => Dinge von dennen ich nicht WEISS das ich sie brauche, implementiere ich nicht.
 * SRP => "Single Responsibility Principle" => Ein Baustein soll nur eine Verantwortung haben. Nur EINE Stakeholdergroupe darf Veränderungen anstoßen
 * Auskommentiertere Code hat NICHTS im Hauptbranch zu suchen
+* keine "magic values" => alle Zahlen / Strings die sich innerhalb einer Fachlichkeit wiederholen sollten als Konstante oder enum zentralisiert werden.

@@ -1,11 +1,15 @@
 package com.example.project;
 
 public class NumberMapper {
+
+	enum NumberType {
+		Romanian, Binary, Octal, Hexadecimal;
+
+
+	}
+
 	public static void main(String[] args) {
 		NumberMapper mapper = new NumberMapper();
-		// if( args[0] < 0){
-		// return;
-		// }
 		System.out.println(mapper.mapTo(Integer.parseInt(args[0]), args[1]));
 	}
 
@@ -19,23 +23,23 @@ public class NumberMapper {
 	String result;
 
 	public String mapTo(int input, String toType) {
-		if (!toType.equals("Romanian") && !toType.equals("Binary") && !toType.equals("Octal")
-				&& !toType.equals("Hexadecimal")) {
+		if (!toType.equals(NumberType.Romanian.name()) && !toType.equals(NumberType.Binary.name()) && !toType.equals(NumberType.Octal.name())
+				&& !toType.equals(NumberType.Hexadecimal.name())) {
 			return ERRORCODE.UNKNOWN_TARGET.toString();
 		}
 		if (input < 0) {
 			return ERRORCODE.NEGATIVE_NUMBER.toString();
 		}
-		if (toType.equalsIgnoreCase("Romanian")) {
+		if (toType.equalsIgnoreCase(NumberType.Romanian.name())) {
 			return mapToRomanianNumber(input);
 		}
-		if (toType.equals("Binary")) {
+		if (toType.equals(NumberType.Binary.name())) {
 			return mapToBase(input, 2);
 		}
-		if ((toType.equalsIgnoreCase("Octal"))) {
+		if ((toType.equalsIgnoreCase(NumberType.Octal.name()))) {
 			return mapToBase(input, 8);
 		}
-		if (toType.equals("Hexadecimal")) {
+		if (toType.equals(NumberType.Hexadecimal.name())) {
 			return mapToHexaDecimal(input);
 		}
 		return ERRORCODE.UNEXPECTED_ERROR.toString();

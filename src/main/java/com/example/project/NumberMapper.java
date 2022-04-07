@@ -5,7 +5,14 @@ public class NumberMapper {
 	enum NumberType {
 		Romanian, Binary, Octal, Hexadecimal;
 
-
+		public static boolean contains(String type){
+			for (NumberType  value: values()) {
+				if(value.name().equalsIgnoreCase(type)){
+					return true;
+				}
+			}
+			return false;
+		}
 	}
 
 	public static void main(String[] args) {
@@ -23,8 +30,7 @@ public class NumberMapper {
 	String result;
 
 	public String mapTo(int input, String toType) {
-		if (!toType.equals(NumberType.Romanian.name()) && !toType.equals(NumberType.Binary.name()) && !toType.equals(NumberType.Octal.name())
-				&& !toType.equals(NumberType.Hexadecimal.name())) {
+		if (isTypeUnknown(toType)) {
 			return ERRORCODE.UNKNOWN_TARGET.toString();
 		}
 		if (input < 0) {
@@ -33,16 +39,20 @@ public class NumberMapper {
 		if (toType.equalsIgnoreCase(NumberType.Romanian.name())) {
 			return mapToRomanianNumber(input);
 		}
-		if (toType.equals(NumberType.Binary.name())) {
+		if (toType.equalsIgnoreCase(NumberType.Binary.name())) {
 			return mapToBase(input, 2);
 		}
 		if ((toType.equalsIgnoreCase(NumberType.Octal.name()))) {
 			return mapToBase(input, 8);
 		}
-		if (toType.equals(NumberType.Hexadecimal.name())) {
+		if (toType.equalsIgnoreCase(NumberType.Hexadecimal.name())) {
 			return mapToHexaDecimal(input);
 		}
 		return ERRORCODE.UNEXPECTED_ERROR.toString();
+	}
+
+	private boolean isTypeUnknown(String toType) {
+		return !NumberType.contains(toType);
 	}
 
 	// maps an integer into a String in the Romaniam number format

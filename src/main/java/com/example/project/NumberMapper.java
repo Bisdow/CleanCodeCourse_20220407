@@ -21,18 +21,15 @@ public class NumberMapper {
 	}
 
 	public String mapTo(int input, String toType) {
-		if (isTypeUnknown(toType)) {
-			return ERRORCODE.UNKNOWN_TARGET.toString();
-		}
-
 		if (input < 0) {
 			return ERRORCODE.NEGATIVE_NUMBER.toString();
 		}
-		return new NumberMapperFactory().createNumberMapper(toType).map(input);
-	}
 
-	private boolean isTypeUnknown(String toType) {
-		return !NumberType.contains(toType);
+		try {
+			return new NumberMapperFactory().createNumberMapper(toType).map(input);
+		} catch (IllegalArgumentException e){
+			return ERRORCODE.UNKNOWN_TARGET.toString();
+		}
+	
 	}
-
 }

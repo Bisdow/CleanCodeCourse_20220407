@@ -30,13 +30,16 @@
 * Code Review
 * Statische Analyze
 * Einheitliche Codeformatierung
+* 
 * KISS => "Keep it simple and stupid" =>Code so strukturiern und vereinfachen das einfach und verständlich ist.
 * DRY => "Do not repeat (yourself) => Fachliche Logik nicht doppeln, CODE dagegen kann gerne gedoppelt werden
 * YAGNI => "You aint gonna need it" => Dinge von dennen ich nicht WEISS das ich sie brauche, implementiere ich nicht.
 * SRP => "Single Responsibility Principle" => Ein Baustein soll nur eine Verantwortung haben. Nur EINE Stakeholdergroupe darf Veränderungen anstoßen
+* Liskovches Substitutionsprinzip => 
 * Auskommentiertere Code hat NICHTS im Hauptbranch zu suchen
 * keine "magic values" => alle Zahlen / Strings die sich innerhalb einer Fachlichkeit wiederholen sollten als Konstante oder enum zentralisiert werden.
 * Wenn man beim "Aufräumen" an einer Stelle nicht weiterkommt, dann erst mal andere Stellen aufräumen, vielleicht wird damit die erste Stelle auch wieder verständlicher
 * Komplexere Boolsche Ausdrücke in IF Statements in Funktion auslagern => Code leichter lesbar und gibt dem Boolschen Ausdruck einen "kontext"
 * Es kann für das Verständnis hilfreich sein technische Funktionen in einer fachlich benamten Funktion zu wrappen => isUnknownType(xy){ return someEnum.contains(xy)}
 * NOT ist fürs Gehirn Aufwendig zu verarbeiten, wenn man kann dann darauf verzichten oder in einer Funktion "erklären"
+  

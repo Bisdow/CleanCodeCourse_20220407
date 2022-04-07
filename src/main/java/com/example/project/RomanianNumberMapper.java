@@ -1,6 +1,10 @@
 package com.example.project;
 
-public class RomanianNumberMapper {
+public class RomanianNumberMapper implements GenericNumberMapper{
+
+    public String map(int value) {
+        return mapToRomanianNumber(value);  
+    }
 
 static String mapToRomanianNumber(int input) {
 

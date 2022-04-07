@@ -28,16 +28,16 @@ public class NumberMapper {
 			return ERRORCODE.NEGATIVE_NUMBER.toString();
 		}
 		if (toType.equalsIgnoreCase(NumberType.Romanian.name())) {
-			return RomanianNumberMapper.mapToRomanianNumber(input);
+			return new RomanianNumberMapper().map(input);
 		}
 		if (toType.equalsIgnoreCase(NumberType.Binary.name())) {
-			return BaseNumberMapper.mapToBase(input, 2);
+			return new BinaryNumberMapper().map(input);
 		}
 		if ((toType.equalsIgnoreCase(NumberType.Octal.name()))) {
-			return BaseNumberMapper.mapToBase(input, 8);
+			return new OctalNumberMapper().map(input);
 		}
 		if (toType.equalsIgnoreCase(NumberType.Hexadecimal.name())) {
-			return HexaDecimalNumberMapper.mapToHexaDecimal(input);
+			return new HexaDecimalNumberMapper().map(input);
 		}
 		return ERRORCODE.UNEXPECTED_ERROR.toString();
 	}

@@ -1,6 +1,10 @@
 package com.example.project;
 
-public class HexaDecimalNumberMapper {
+public class HexaDecimalNumberMapper implements GenericNumberMapper{
+
+    public String map(int value) {
+        return mapToHexaDecimal(value);
+    }
 
     	static String mapToHexaDecimal(int input) {
 		if (input == 0) {

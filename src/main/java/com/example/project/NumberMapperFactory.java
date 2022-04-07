@@ -3,16 +3,8 @@ package com.example.project;
 public class NumberMapperFactory {
 	enum NumberType {
 		Romanian, Binary, Octal, Hexadecimal;
-
-		public static boolean contains(String type){
-			for (NumberType  value: values()) {
-				if(value.name().equalsIgnoreCase(type)){
-					return true;
-				}
-			}
-			return false;
-		}
 	}
+    
     public GenericNumberMapper createNumberMapper(String toType) {
 
         if (toType.equalsIgnoreCase(NumberType.Romanian.name())) {

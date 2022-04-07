@@ -2,18 +2,6 @@ package com.example.project;
 
 public class NumberMapper {
 
-	enum NumberType {
-		Romanian, Binary, Octal, Hexadecimal;
-
-		public static boolean contains(String type){
-			for (NumberType  value: values()) {
-				if(value.name().equalsIgnoreCase(type)){
-					return true;
-				}
-			}
-			return false;
-		}
-	}
 
 	public static void main(String[] args) {
 		NumberMapper mapper = new NumberMapper();

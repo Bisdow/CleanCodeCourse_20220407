@@ -1,10 +1,12 @@
 package com.example.project;
 
+import com.example.project.numbermapper.*;
+
 public class NumberMapperFactory {
 	enum NumberType {
 		Romanian, Binary, Octal, Hexadecimal;
 	}
-    
+
     public GenericNumberMapper createNumberMapper(String toType) {
 
         if (toType.equalsIgnoreCase(NumberType.Romanian.name())) {

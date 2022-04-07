@@ -42,4 +42,4 @@
 * Komplexere Boolsche Ausdrücke in IF Statements in Funktion auslagern => Code leichter lesbar und gibt dem Boolschen Ausdruck einen "kontext"
 * Es kann für das Verständnis hilfreich sein technische Funktionen in einer fachlich benamten Funktion zu wrappen => isUnknownType(xy){ return someEnum.contains(xy)}
 * NOT ist fürs Gehirn Aufwendig zu verarbeiten, wenn man kann dann darauf verzichten oder in einer Funktion "erklären"
-  
+* Zerlegen in kleine Einheiten

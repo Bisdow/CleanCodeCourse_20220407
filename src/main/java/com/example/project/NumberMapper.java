@@ -14,7 +14,9 @@ public class NumberMapper {
 		}
 
 		try {
-			return new NumberMapperFactory().createNumberMapper(toType).map(input);
+			return new NumberMapperFactory()
+			.createNumberMapper(toType)
+			.map(input);
 		} catch (IllegalArgumentException e){
 			return ERRORCODE.UNKNOWN_TARGET.toString();
 		}

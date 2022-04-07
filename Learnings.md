@@ -30,7 +30,9 @@
 * Code Review
 * Statische Analyze
 * Einheitliche Codeformatierung
-* 
+
+* Fachlichkeit in der Tiefe verstehen und hinterfragen
+
 * KISS => "Keep it simple and stupid" =>Code so strukturiern und vereinfachen das einfach und verständlich ist.
 * DRY => "Do not repeat (yourself) => Fachliche Logik nicht doppeln, CODE dagegen kann gerne gedoppelt werden
 * YAGNI => "You aint gonna need it" => Dinge von dennen ich nicht WEISS das ich sie brauche, implementiere ich nicht.
@@ -43,3 +45,5 @@
 * Es kann für das Verständnis hilfreich sein technische Funktionen in einer fachlich benamten Funktion zu wrappen => isUnknownType(xy){ return someEnum.contains(xy)}
 * NOT ist fürs Gehirn Aufwendig zu verarbeiten, wenn man kann dann darauf verzichten oder in einer Funktion "erklären"
 * Zerlegen in kleine Einheiten
+* GOF-Patterns können hilfreich sein (aber zu viel des guten ist auch nicht gut)
+* Cohärenz => was fachlich zusammengehört soll auch strukturell zusammen sein
